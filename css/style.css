@@ -7,18 +7,15 @@
     overflow: hidden;
   }
   section {
-    position: absolute;
+    background-color: black;
+    position: relative;
   }
   svg {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
     width: 200px;
     fill: rgb(0, 81, 255);
     z-index: -1;
   }
-
   @media (max-width: 768px) {
     svg {
       width: 150px;
