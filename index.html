@@ -18,7 +18,8 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800&display=swap" rel="stylesheet">
 
-
+<!--DVD LOGO-->
+<link rel="stylesheet" href="css/style.css">
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="css/normalize.css">
@@ -30,48 +31,14 @@
      -->
     <link rel="stylesheet" href="css/skeleton-auto.css">
 
+     
+
     <!-- Brand Styles -->
     <link rel="stylesheet" href="css/brands.css">
 
-     <!--DVD LOGO-->
-     <style>
-        .dvd-logo {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 100px;
-          height: 75px;
-          background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9d/DVD_logo.png");
-          background-size: contain;
-          animation: bounce 2s infinite;
-        }
-    
-        @keyframes bounce {
-          0% {
-            transform: translate(-50%, -50%) scale(1, 1);
-          }
-          25% {
-            transform: translate(-50%, -50%) scale(1.1, 0.9);
-          }
-          50% {
-            transform: translate(-50%, -50%) scale(0.9, 1.1);
-          }
-          75% {
-            transform: translate(-50%, -50%) scale(1.05, 0.95);
-          }
-          100% {
-            transform: translate(-50%, -50%) scale(1, 1);
-          }
-        }
-      </style>
-
-
+     
 
 </head>
-
-<body>
-   
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
@@ -95,7 +62,7 @@
           Edit the "Short Bio" section tell users about yourself or your brand.
 
         -->
-
+        
         <!-- Your Image Here -->
         <img src="images/avatar2.png" class="avatar" srcset="images/avatar2@2x.png 2x" alt="LittleLink Logo">
 
@@ -136,6 +103,8 @@
         -->
 
      <!-- Instagram -->
+     
+
         <a class="button button-instagram" href="https://www.instagram.com/frnsanchez/" target="_blank" rel="noopener">
             <img class="icon" src="images/icons/instagram.svg" alt="Instagram Logo">Insta</a>
         <br>
@@ -187,50 +156,17 @@
             You can edit or remove anything here to make your own footer.
         -->
         <p><a href="https://www.youtube.com/watch?v=N8TY13ELB-g">👉CLICKEAME👈</a>
-
-            <script>
-                // Bouncing DVD Logo
-              
-                const logo = document.querySelector(".logo");
-                const screen = document.querySelector(".screen");
-              
-                const logoWidth = logo.clientWidth;
-                const logoHeight = logo.clientHeight;
-              
-                const screenTop = screen.getBoundingClientRect().top;
-                const screenLeft = screen.getBoundingClientRect().left;
-                const screenRight = screen.getBoundingClientRect().right;
-                const screenBottom = screen.getBoundingClientRect().bottom;
-              
-                const getRandomSpeed = () => Math.floor(Math.random() * 10) + 1;
-              
-                let x = 0;
-                let y = 0;
-                let xSpeed = getRandomSpeed();
-                let ySpeed = getRandomSpeed();
-              
-                const animateLogo = () => {
-                  x += xSpeed;
-                  y += ySpeed;
-              
-                  if (x + logoWidth > screenRight || x < screenLeft) {
-                    xSpeed *= -1;
-                    x += xSpeed;
-                  }
-              
-                  if (y + logoHeight > screenBottom || y < screenTop) {
-                    ySpeed *= -1;
-                    y += ySpeed;
-                  }
-              
-                  logo.style.transform = `translate(${x}px, ${y}px)`;
-              
-                  window.requestAnimationFrame(animateLogo);
-                };
-              
-                animateLogo();
-              </script>
+            <section>
+        
+            
       </div>
+
+        <svg class="logo" viewBox="0 0 16 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.4 4.959C3.268 4.959 0 5.509 0 6.186C0 6.864 3.268 7.413 7.4 7.413C11.532 7.413 14.943 6.864 14.943 6.186C14.944 5.508 11.533 4.959 7.4 4.959ZM7.263 6.51C6.306 6.51 5.53 6.273 5.53 5.98C5.53 5.687 6.306 5.45 7.263 5.45C8.22 5.45 8.995 5.687 8.995 5.98C8.995 6.273 8.219 6.51 7.263 6.51ZM13.319 0.052002H9.701L7.769 2.291L6.849 0.0830021H1.145L0.933 1.045H3.202C3.202 1.045 4.239 0.909002 4.273 1.739C4.273 3.177 1.897 3.055 1.897 3.055L2.341 1.555H0.869L0.194 3.988H2.862C2.862 3.988 5.683 3.738 5.683 1.77C5.683 1.77 5.797 1.196 5.749 0.943002L7.124 4.62L10.559 1.055H13.165C13.165 1.055 13.963 1.123 13.963 1.74C13.963 3.178 11.604 3.028 11.604 3.028L11.969 1.556H10.682L9.946 3.989H12.399C12.399 3.989 15.465 3.799 15.465 1.71C15.465 1.709 15.404 0.052002 13.319 0.052002Z" />
+        </svg>
+        </section>
+        <script src="main.js"></script>
+        
     </div>
   </div>
 
