@@ -1,0 +1,38 @@
+/* Estilos para el contenedor del logo DVD */
+.dvd-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: bounce 2s infinite;
+  }
+  
+  /* Estilos para el logo DVD */
+  .dvd-logo {
+    max-width: 100px;
+    animation: change-color 1s infinite alternate;
+  }
+  
+  /* Animación para el rebote */
+  @keyframes bounce {
+    0% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  /* Animación para el cambio de color */
+  @keyframes change-color {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
