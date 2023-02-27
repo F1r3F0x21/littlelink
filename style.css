@@ -15,7 +15,9 @@ body {
 }
 svg {
   display: block;
+  z-index: -1;
 }
 .logo {
   fill: #fff;
+  z-index: 0;
 }
