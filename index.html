@@ -33,23 +33,51 @@
     <!-- Brand Styles -->
     <link rel="stylesheet" href="css/brands.css">
 
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/avatar.png">
+     <!--DVD LOGO-->
+     <style>
+        .dvd-logo {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 75px;
+          background-image: url("https://upload.wikimedia.org/wikipedia/commons/9/9d/DVD_logo.png");
+          background-size: contain;
+          animation: bounce 2s infinite;
+        }
+    
+        @keyframes bounce {
+          0% {
+            transform: translate(-50%, -50%) scale(1, 1);
+          }
+          25% {
+            transform: translate(-50%, -50%) scale(1.1, 0.9);
+          }
+          50% {
+            transform: translate(-50%, -50%) scale(0.9, 1.1);
+          }
+          75% {
+            transform: translate(-50%, -50%) scale(1.05, 0.95);
+          }
+          100% {
+            transform: translate(-50%, -50%) scale(1, 1);
+          }
+        }
+      </style>
 
 
 
 </head>
 
 <body>
-
+   
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
       <div class="column" style="margin-top: 10%">
-
+        <div class="dvd-logo"></div>
         <!-- 
 
           ## Getting Started with LittleLink
@@ -133,7 +161,7 @@
             <img class="icon" src="images/icons/soundcloud.svg" alt="SoundCloud Logo">SoundCloud</a>
         <br>
 
-
+        
         <!-- Telegram -->
         <a class="button button-telegram" href="https://t.me/fraancs" target="_blank" rel="noopener">
             <img class="icon" src="images/icons/telegram.svg" alt="Telegram Logo">Telegram</a>
@@ -160,6 +188,48 @@
         -->
         <p><a href="https://www.youtube.com/watch?v=N8TY13ELB-g">👉CLICKEAME👈</a>
 
+            <script>
+                // Bouncing DVD Logo
+              
+                const logo = document.querySelector(".logo");
+                const screen = document.querySelector(".screen");
+              
+                const logoWidth = logo.clientWidth;
+                const logoHeight = logo.clientHeight;
+              
+                const screenTop = screen.getBoundingClientRect().top;
+                const screenLeft = screen.getBoundingClientRect().left;
+                const screenRight = screen.getBoundingClientRect().right;
+                const screenBottom = screen.getBoundingClientRect().bottom;
+              
+                const getRandomSpeed = () => Math.floor(Math.random() * 10) + 1;
+              
+                let x = 0;
+                let y = 0;
+                let xSpeed = getRandomSpeed();
+                let ySpeed = getRandomSpeed();
+              
+                const animateLogo = () => {
+                  x += xSpeed;
+                  y += ySpeed;
+              
+                  if (x + logoWidth > screenRight || x < screenLeft) {
+                    xSpeed *= -1;
+                    x += xSpeed;
+                  }
+              
+                  if (y + logoHeight > screenBottom || y < screenTop) {
+                    ySpeed *= -1;
+                    y += ySpeed;
+                  }
+              
+                  logo.style.transform = `translate(${x}px, ${y}px)`;
+              
+                  window.requestAnimationFrame(animateLogo);
+                };
+              
+                animateLogo();
+              </script>
       </div>
     </div>
   </div>
